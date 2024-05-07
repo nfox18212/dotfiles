@@ -1,0 +1,2 @@
+timeout 1200 "swaylock -f --grace 20"
+idlehint 600
