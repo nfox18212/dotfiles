@@ -1,19 +1,19 @@
 # aliases are on line 262
 # for penacony-specific aliases (sway), go to line 314
 
-export PATH="/var/home/nfox/.cargo/bin:$PATH"
-export PATH="/var/home/nfox/.config/emacs/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
 export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=x11
 export IVERILOG_DUMPER="lxt"
 
+eval "$($HOME/.fzf/bin/fzf --zsh)"
 # Starship prompt
 eval "$(starship init zsh)"
 function set_win_title(){
     echo -ne "\033]0; $USER@$HOST:${PWD/$HOME/~} \007"
 }
 precmd_functions+=(set_win_title)
-
 # Download Znap, if it's not there yet.
 [[ -r ~/Repos/znap/znap.zsh ]] ||
     git clone --depth 1 -- \
@@ -24,13 +24,13 @@ source ~/Repos/znap/znap.zsh  # Start Znap
 #  modules/git \
 
 # `znap source` automatically downloads and starts your plugins.
-znap source zsh-completions
-znap source zsh-syntax-highlighting
-znap source zsh-async
+znap source zsh-users/zsh-completions
+znap source zsh-users/zsh-syntax-highlighting
+znap source mafredri/zsh-async
 #znap source zsh-colored-man-pages
-znap source zsh-abbrev-alias
+znap source momo-lab/zsh-abbrev-alias
 znap source unixorn/fzf-zsh-plugin
-znap source prezto
+znap source sorin-ionescu/prezto
 znap source prezto \
   modules/helper \
   modules/completion \
@@ -43,8 +43,8 @@ znap source prezto \
   modules/tmux 
 
 znap source prezto modules/python
+znap source unixorn/fzf-zsh-plugin
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 setopt EXTENDED_GLOB
 #for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
@@ -167,7 +167,7 @@ if [[ -n "${terminfo[khome]}" ]]; then
 fi
 # [End] - Go to end of line
 if [[ -n "${terminfo[kend]}" ]]; then
-export PATH="/var/home/nfox/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
   bindkey -M emacs "${terminfo[kend]}"  end-of-line
   bindkey -M viins "${terminfo[kend]}"  end-of-line
   bindkey -M vicmd "${terminfo[kend]}"  end-of-line
@@ -261,7 +261,7 @@ export ARCHFLAGS="-arch x86_64"
 # ALIAS-SECTION
 
 # Aliases, lots of aliases
-alias ls="eza -g --group-directories-first -t=modified --time-style=long-iso --git -M --git-repos --classify=always"
+alias ls="eza -ga --group-directories-first -t=modified --time-style=long-iso --git -M --git-repos --classify=always"
 alias la="eza -lgha --group-directories-first --header -t=modifed --time-style=long-iso --git"
 alias lt="eza -lgTa --group-directories-first -t=modified --time-style=long-iso --git"
 alias vi="nvim"
@@ -282,25 +282,25 @@ export PATH="/usr/sbin:$PATH"
 export PATH="/usr/bin:$PATH"
 export PATH="/sbin:$PATH"
 export PATH="/root/bin:$PATH"
-export PATH="/var/home/nfox/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/bin/VitalBinaries:$PATH"
-export PATH="/var/home/nfox/Documents/scripts:$PATH"
+export PATH="$HOME/Documents/scripts:$PATH"
 export PATH="/usr/local/ADS2023/bin:$PATH"
-export PATH="/var/home/nfox/ti/ccs1260/ccs/tools/compiler:$PATH"
+export PATH="$HOME/ti/ccs1260/ccs/tools/compiler:$PATH"
 
 alias pip="python3 -m pip"
 alias venv="python3 -m venv"
-alias nvzshrc="/usr/bin/nvim /var/home/nfox/.zshrc && source /var/home/nfox/.zshrc"
-alias nvzhsrc="/usr/bin/nvim /var/home/nfox/.zshrc && source /var/home/nfox/.zshrc"
-alias zshr="source /var/home/nfox/.zshrc"
-alias zhsr="source /var/home/nfox/.zshrc"
-alias nvprompt="nv /var/home/nfox/.config/starship.toml"
+alias nvzshrc="/usr/bin/nvim $HOME/.zshrc && source $HOME/.zshrc"
+alias nvzhsrc="/usr/bin/nvim $HOME/.zshrc && source $HOME/.zshrc"
+alias zshr="source $HOME/.zshrc"
+alias zhsr="source $HOME/.zshrc"
+alias nvprompt="nv $HOME/.config/starship.toml"
 alias nfs-thinkpad="sudo mount -o,vers=3 192.168.1.5:/mnt/main-pool/thinkpad /mnt/share/nasdir"
 alias nfs-omen="sudo mount -o,vers=3 192.168.1.5:/mnt/main-pool/omen-dataset /mnt/share/nasdir"
 alias nfs-off="sudo umount /mnt/share/nasdir"
 alias unmount="umount"
 alias q="exit"
-alias octave="cd /var/home/nfox/Documents/CodingProjects/Octave && octave && cd -"
+alias octave="cd $HOME/Documents/CodingProjects/Octave && octave && cd -"
 alias ssh-ubuntusrv="ssh 192.168.122.194"
 alias ascii="gwenview ~/Pictures/ASCII-Table.png"
 alias eventpass="gwenview ~/Documents/ImportantStuff/UBEVentPass.png"
@@ -357,18 +357,18 @@ alias tb='nc termbin.com 9999'
 # alias pish="docker exec -it pintos /usr/bin/fish"
 alias nvkernel="sudo nvim /etc/default/grub"
 alias edit-grub="sudo nvim /boot/grub/grub.cfg"
-alias flips="/var/home/nfox/Documents/CodingProjects/SNES-SMW/floating/flips-linux"
+alias flips="$HOME/Documents/CodingProjects/SNES-SMW/floating/flips-linux"
 alias gst-inspect="gst-inspect-1.0"
 # school
 alias ssht="ssh njfox4@timberlake.cse.buffalo.edu"
 
 #alias ls="/usr/bin/ls"
-alias ahex="/var/home/nfox/Documents/School/Microprocessors/nfox18212.github.io/scripts/asciitohex.py"
+alias ahex="$HOME/Documents/School/Microprocessors/nfox18212.github.io/scripts/asciitohex.py"
 
 # aws ssh
 alias ssha="ssh -i \"~/.ssh/aws-rsa.pem\" admin@ec2-54-210-198-149.compute-1.amazonaws.com"
 # F4PGA Stuff - may change
-# export INSTALL_DIR="/var/home/nfox/Documents/CodingProjects/verilog/f4pga-examples/bin"
+# export INSTALL_DIR="$HOME/Documents/CodingProjects/verilog/f4pga-examples/bin"
 # export FPGA_FAM="xc7"
 
 # arm stuff
@@ -385,3 +385,5 @@ eval "$(zoxide init --cmd cd zsh)"
 
 
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
