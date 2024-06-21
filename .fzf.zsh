@@ -1,14 +1,7 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == *${FZF_PATH}/bin* ]]; then
-  export PATH="$PATH:${FZF_PATH}/bin"
+if [[ ! "$PATH" == */home/nfox/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/home/nfox/.fzf/bin"
 fi
 
-# Auto-completion
-# ---------------
-[[ $- == *i* ]] && source "${FZF_PATH}/shell/completion.zsh" 2> /dev/null
-
-# Key bindings
-# ------------
-source "${FZF_PATH}/shell/key-bindings.zsh"
-
+eval "$(fzf --zsh)"

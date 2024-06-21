@@ -250,7 +250,6 @@ fi
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-## Preferred editor for local and remote sessions
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
 
@@ -261,6 +260,9 @@ export ARCHFLAGS="-arch x86_64"
 # ALIAS-SECTION
 
 # Aliases, lots of aliases
+alias ping="ping -c 4"
+alias sysinfo="fastfetch -l none > ff.log"
+alias mcc="musl-gcc"
 alias ls="eza -ga --group-directories-first -t=modified --time-style=long-iso --git -M --git-repos --classify=always"
 alias la="eza -lgha --group-directories-first --header -t=modifed --time-style=long-iso --git"
 alias lt="eza -lgTa --group-directories-first -t=modified --time-style=long-iso --git"
@@ -269,6 +271,7 @@ alias nv="nvim"
 alias ripgrep="rg"
 alias clc="clear"
 alias pamcan="pacman"
+alias sleep="sudo systemctl suspend"
 #alias pacman="paru"
 alias pip="pip3"
 alias ova2qcow="sudo /bin/ova2qcow.sh"
@@ -314,9 +317,8 @@ alias ff="fastfetch"
 alias clpp="clang++"
 alias cl="clang"
 alias renv="source initenv.sh"
+alias sshaws= 'ssh -i "$HOME/.ssh/aws-rsa.pem" admin@ec2-54-210-198-149.compute-1.amazonaws.com'
 
-# Penacony specific stuff (fedora atomic sway)
-alias rpmo="rpm-ostree"
 #alias nvconfig="nvim $HOME/.config/nvim/init.vim"
 alias nvconfig="nvim $HOME/.config/nvim/init.lua"
 alias nvsway="nvim $HOME/.config/sway/config"
@@ -387,3 +389,4 @@ eval "$(zoxide init --cmd cd zsh)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

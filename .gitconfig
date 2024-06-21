@@ -16,6 +16,7 @@
 	repo = /var/home/nfox/Repos/unixorn/fzf-zsh-plugin
 	repo = /var/home/nfox/Repos/zsh-users/zsh-completions
 	repo = /var/home/nfox/Repos/zsh-users/zsh-syntax-highlighting
+	repo = /home/nfox/Repos/znap
 [pull]
 	rebase = false
 [init]

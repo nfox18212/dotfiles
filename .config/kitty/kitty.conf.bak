@@ -1121,7 +1121,7 @@ tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{title
 
 #: The foreground and background colors.
 
-background_opacity 0.85
+background_opacity 1.0
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -1145,7 +1145,7 @@ background_opacity 0.85
 #: this option when reloading the config will only work if
 #: dynamic_background_opacity was enabled in the original config.
 
-background_blur 25
+#: background_blur 25
 
 #: Set to a positive value to enable background blur (blurring of the
 #: visuals behind a transparent window) on platforms that support it.
@@ -1173,7 +1173,7 @@ background_blur 25
 #: When background image is scaled, whether linear interpolation
 #: should be used.
 
-#dynamic_background_opacity yes
+# dynamic_background_opacity no
 
 #: Allow changing of the background_opacity dynamically, using either
 #: keyboard shortcuts (increase_background_opacity and
@@ -1282,7 +1282,7 @@ background_blur 25
 #:
 #}}}
 
-#: <D-i>Advanced {{{
+#: Advanced {{{
 
 # shell .
 
@@ -2454,6 +2454,6 @@ close_on_child_death no
 
 
 # BEGIN_KITTY_THEME
-# Tokyo Night
+# One Dark
 include current-theme.conf
 # END_KITTY_THEME
