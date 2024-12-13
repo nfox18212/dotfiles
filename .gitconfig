@@ -1,23 +1,6 @@
-[advice]
-	addIgnoredFile = false
 [user]
-	email = nfox18212@gmail.com
 	name = nfox18212
-[maintenance]
-	repo = /var/home/nfox/Repos/znap
-	repo = /var/home/nfox/Repos/ael-code/zsh-colored-man-pages
-	repo = /var/home/nfox/Repos/Aloxaf/fzf-tab
-	repo = /var/home/nfox/Repos/mafredri/zsh-async
-	repo = /var/home/nfox/Repos/momo-lab/zsh-abbrev-alias
-	repo = /var/home/nfox/Repos/robbyrussell/oh-my-zsh
-	repo = /var/home/nfox/Repos/rupa/z
-	repo = /var/home/nfox/Repos/sindresorhus/pure
-	repo = /var/home/nfox/Repos/sorin-ionescu/prezto
-	repo = /var/home/nfox/Repos/unixorn/fzf-zsh-plugin
-	repo = /var/home/nfox/Repos/zsh-users/zsh-completions
-	repo = /var/home/nfox/Repos/zsh-users/zsh-syntax-highlighting
-	repo = /home/nfox/Repos/znap
+	email = nfox18212@gmail.com
 [pull]
+	merge = true
 	rebase = false
-[init]
-	defaultBranch = master

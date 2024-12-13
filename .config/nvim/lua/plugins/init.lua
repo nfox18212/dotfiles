@@ -75,4 +75,5 @@ return {
 		},
 		lazy = false,
 	},
+  "aserowy/tmux.nvim"
 }
