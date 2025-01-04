@@ -14,4 +14,4 @@ o.shiftwidth = 2
 o.expandtab = true
 vim.bo.softtabstop = 2
 
-vim.o.shell = "/bin/zsh -i"
+vim.o.shell = "/usr/bin/zsh -i"

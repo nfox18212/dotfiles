@@ -3,9 +3,12 @@
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/emacs/bin:$PATH"
+export PATH="/usr/bin:$PATH"
 export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=x11
 export IVERILOG_DUMPER="lxt"
+
+export DRI_PRIME=1
 
 eval "$($HOME/.fzf/bin/fzf --zsh)"
 # Starship prompt
@@ -263,9 +266,9 @@ export ARCHFLAGS="-arch x86_64"
 alias ping="ping -c 4"
 alias sysinfo="fastfetch -l none > ff.log"
 alias mcc="musl-gcc"
-alias ls="eza -ga --group-directories-first -t=modified --time-style=long-iso --git -M --git-repos --classify=always"
-alias la="eza -lgha --group-directories-first --header -t=modifed --time-style=long-iso --git"
-alias lt="eza -lgTa --group-directories-first -t=modified --time-style=long-iso --git"
+alias ls="eza -gab --group-directories-first -t=modified --time-style=long-iso --git -M --git-repos --classify=always"
+alias la="eza -lghab --group-directories-first --header -t=modifed --time-style=long-iso --git"
+alias lt="eza -lgTab --group-directories-first -t=modified --time-style=long-iso --git"
 alias vi="nvim"
 alias nv="nvim"
 alias ripgrep="rg"
@@ -290,6 +293,8 @@ export PATH="/usr/bin/VitalBinaries:$PATH"
 export PATH="$HOME/Documents/scripts:$PATH"
 export PATH="/usr/local/ADS2023/bin:$PATH"
 export PATH="$HOME/ti/ccs1260/ccs/tools/compiler:$PATH"
+# LSPs from Mason
+export PATH="$HOME/.local/share/data/mason/bin:$PATH"
 
 alias pip="python3 -m pip"
 alias venv="python3 -m venv"
@@ -317,10 +322,11 @@ alias ff="fastfetch"
 alias clpp="clang++"
 alias cl="clang"
 alias renv="source initenv.sh"
-alias sshaws= 'ssh -i "$HOME/.ssh/aws-rsa.pem" admin@ec2-54-210-198-149.compute-1.amazonaws.com'
+alias sshaws="ssh -i $HOME/.ssh/aws-rsa.pem admin@ec2-54-210-198-149.compute-1.amazonaws.com"
 
 #alias nvconfig="nvim $HOME/.config/nvim/init.vim"
 alias nvconfig="nvim $HOME/.config/nvim/init.lua"
+alias nvplugins="nvim $HOME/.config/nvim/lua/plugins/init.lua"
 alias nvsway="nvim $HOME/.config/sway/config"
 alias nvtmux="nvim $HOME/.tmux.conf"
 alias icat="kitty icat"
@@ -378,6 +384,12 @@ alias gcca="arm-none-eabi-gcc"
 # Wayland
 # WAYLAND_DISPLAY=no
 
+# X2Go - Careful, might crash
+alias x2go="x2goclient --broker-url=ssh://lts-broker.sens.buffalo.edu/usr/bin/x2gobroker-ssh"
+# vfio stuff
+alias lgc="looking-glass-client -f /dev/kvmfr0"
+
+
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completio
@@ -390,3 +402,10 @@ eval "$(zoxide init --cmd cd zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+# Added by ProtonUp-Qt on 26-06-2024 21:43:20
+if [ -d "/home/nfox/stl/prefix" ]; then export PATH="$PATH:/home/nfox/stl/prefix"; fi
+
+alias wayshell="waydroid shell bash"
+
+. "$HOME/.local/share/../bin/env"
