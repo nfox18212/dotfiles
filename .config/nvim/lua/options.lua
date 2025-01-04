@@ -2,8 +2,9 @@ require "nvchad.options"
 
 -- add yours here!
 
-local o = vim.opt
+-- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
+<<<<<<< HEAD
 
 o.termguicolors = true
 vim.g.loaded_netrwPlugin = true
@@ -15,3 +16,5 @@ o.expandtab = true
 vim.bo.softtabstop = 2
 
 vim.o.shell = "/usr/bin/zsh -i"
+=======
+>>>>>>> accff131a6f4f0a5d0459dca84887f5dc3b79bcf

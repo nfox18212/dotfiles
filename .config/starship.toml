@@ -3,6 +3,8 @@
 # custom format
 #format= '$all'
 
+command_timeout=100
+
 ## FIRST LINE/ROW: Info & Status
 # First param ─┌
 [username]

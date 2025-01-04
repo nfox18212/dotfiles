@@ -1,20 +1,22 @@
 # aliases are on line 262
 # for penacony-specific aliases (sway), go to line 314
 
+export PATH="/usr/bin:/usr/sbin:/usr/local/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.config/emacs/bin:$PATH"
-export PATH="/usr/bin:$PATH"
+export PATH="~/.config/emacs/bin:$PATH"
 export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=x11
 export IVERILOG_DUMPER="lxt"
 
+
 export DRI_PRIME=1
 
 eval "$($HOME/.fzf/bin/fzf --zsh)"
+
 # Starship prompt
-eval "$(starship init zsh)"
+eval "$(~/.cargo/bin/starship init zsh)"
 function set_win_title(){
-    echo -ne "\033]0; $USER@$HOST:${PWD/$HOME/~} \007"
+    echo -ne "\033]0; $USER@$HOST:${PWD/~/~} \007"
 }
 precmd_functions+=(set_win_title)
 # Download Znap, if it's not there yet.
@@ -50,8 +52,8 @@ znap source unixorn/fzf-zsh-plugin
 
 
 setopt EXTENDED_GLOB
-#for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-#  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+#for rcfile in "${ZDOTDIR:-~}"/.zprezto/runcoms/^README.md(.N); do
+#  ln -s "$rcfile" "${ZDOTDIR:-~}/.${rcfile:t}"
 #done
 
 # Uncomment the following line to use case-sensitive completion.
@@ -170,7 +172,7 @@ if [[ -n "${terminfo[khome]}" ]]; then
 fi
 # [End] - Go to end of line
 if [[ -n "${terminfo[kend]}" ]]; then
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="~/.cargo/bin:$PATH"
   bindkey -M emacs "${terminfo[kend]}"  end-of-line
   bindkey -M viins "${terminfo[kend]}"  end-of-line
   bindkey -M vicmd "${terminfo[kend]}"  end-of-line
@@ -288,27 +290,32 @@ export PATH="/usr/sbin:$PATH"
 export PATH="/usr/bin:$PATH"
 export PATH="/sbin:$PATH"
 export PATH="/root/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="~/.local/bin:$PATH"
 export PATH="/usr/bin/VitalBinaries:$PATH"
-export PATH="$HOME/Documents/scripts:$PATH"
+export PATH="~/Documents/scripts:$PATH"
 export PATH="/usr/local/ADS2023/bin:$PATH"
+<<<<<<< HEAD
 export PATH="$HOME/ti/ccs1260/ccs/tools/compiler:$PATH"
 # LSPs from Mason
 export PATH="$HOME/.local/share/data/mason/bin:$PATH"
+=======
+export PATH="~/ti/ccs1260/ccs/tools/compiler:$PATH"
+>>>>>>> accff131a6f4f0a5d0459dca84887f5dc3b79bcf
 
+alias sshvlsi="ssh njfox4@lts-broker.sens.buffalo.edu"
 alias pip="python3 -m pip"
 alias venv="python3 -m venv"
-alias nvzshrc="/usr/bin/nvim $HOME/.zshrc && source $HOME/.zshrc"
-alias nvzhsrc="/usr/bin/nvim $HOME/.zshrc && source $HOME/.zshrc"
-alias zshr="source $HOME/.zshrc"
-alias zhsr="source $HOME/.zshrc"
-alias nvprompt="nv $HOME/.config/starship.toml"
+alias nvzshrc="/usr/bin/nvim ~/.zshrc && source ~/.zshrc"
+alias nvzhsrc="/usr/bin/nvim ~/.zshrc && source ~/.zshrc"
+alias zshr="source ~/.zshrc"
+alias zhsr="source ~/.zshrc"
+alias nvprompt="nv ~/.config/starship.toml"
 alias nfs-thinkpad="sudo mount -o,vers=3 192.168.1.5:/mnt/main-pool/thinkpad /mnt/share/nasdir"
 alias nfs-omen="sudo mount -o,vers=3 192.168.1.5:/mnt/main-pool/omen-dataset /mnt/share/nasdir"
 alias nfs-off="sudo umount /mnt/share/nasdir"
 alias unmount="umount"
 alias q="exit"
-alias octave="cd $HOME/Documents/CodingProjects/Octave && octave && cd -"
+alias octave="cd ~/Documents/CodingProjects/Octave && octave && cd -"
 alias ssh-ubuntusrv="ssh 192.168.122.194"
 alias ascii="gwenview ~/Pictures/ASCII-Table.png"
 alias eventpass="gwenview ~/Documents/ImportantStuff/UBEVentPass.png"
@@ -322,6 +329,7 @@ alias ff="fastfetch"
 alias clpp="clang++"
 alias cl="clang"
 alias renv="source initenv.sh"
+
 alias sshaws="ssh -i $HOME/.ssh/aws-rsa.pem admin@ec2-54-210-198-149.compute-1.amazonaws.com"
 
 #alias nvconfig="nvim $HOME/.config/nvim/init.vim"
@@ -329,8 +337,10 @@ alias nvconfig="nvim $HOME/.config/nvim/init.lua"
 alias nvplugins="nvim $HOME/.config/nvim/lua/plugins/init.lua"
 alias nvsway="nvim $HOME/.config/sway/config"
 alias nvtmux="nvim $HOME/.tmux.conf"
+
 alias icat="kitty icat"
-alias nvkitty="nvim $HOME/.config/kitty/kitty.conf"
+alias nvkitty="nvim ~/.config/kitty/kitty.conf"
+alias nvhypr="nvim ~/.config/hypr/hyprland.conf"
 
 # alias fpgal="openFPGALoader"
 
@@ -365,24 +375,25 @@ alias tb='nc termbin.com 9999'
 # alias pish="docker exec -it pintos /usr/bin/fish"
 alias nvkernel="sudo nvim /etc/default/grub"
 alias edit-grub="sudo nvim /boot/grub/grub.cfg"
-alias flips="$HOME/Documents/CodingProjects/SNES-SMW/floating/flips-linux"
+alias flips="~/Documents/CodingProjects/SNES-SMW/floating/flips-linux"
 alias gst-inspect="gst-inspect-1.0"
 # school
 alias ssht="ssh njfox4@timberlake.cse.buffalo.edu"
 
 #alias ls="/usr/bin/ls"
-alias ahex="$HOME/Documents/School/Microprocessors/nfox18212.github.io/scripts/asciitohex.py"
+#alias ahex="~/Documents/School/Microprocessors/nfox18212.github.io/scripts/asciitohex.py"
 
 # aws ssh
 alias ssha="ssh -i \"~/.ssh/aws-rsa.pem\" admin@ec2-54-210-198-149.compute-1.amazonaws.com"
 # F4PGA Stuff - may change
-# export INSTALL_DIR="$HOME/Documents/CodingProjects/verilog/f4pga-examples/bin"
+# export INSTALL_DIR="~/Documents/CodingProjects/verilog/f4pga-examples/bin"
 # export FPGA_FAM="xc7"
 
 # arm stuff
 alias gcca="arm-none-eabi-gcc"
 # Wayland
 # WAYLAND_DISPLAY=no
+
 
 # X2Go - Careful, might crash
 alias x2go="x2goclient --broker-url=ssh://lts-broker.sens.buffalo.edu/usr/bin/x2gobroker-ssh"
@@ -391,6 +402,7 @@ alias lgc="looking-glass-client -f /dev/kvmfr0"
 
 
 export NVM_DIR="$HOME/.config/nvm"
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completio
 
@@ -409,3 +421,15 @@ if [ -d "/home/nfox/stl/prefix" ]; then export PATH="$PATH:/home/nfox/stl/prefix
 alias wayshell="waydroid shell bash"
 
 . "$HOME/.local/share/../bin/env"
+# bun completions
+# [ -s "/home/sparkle/.bun/_bun" ] && source "/home/sparkle/.bun/_bun"
+#
+# # bun
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
+#
+#
+# # after all is said and done, run tmux
+# if [[ -z "$TMUX" ]]; then
+#   tmux
+# fi
