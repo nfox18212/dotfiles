@@ -1,17 +1,19 @@
 # aliases are on line 262
 # for penacony-specific aliases (sway), go to line 314
 
+export PATH="~/.cargo/bin:$PATH"
 export PATH="/usr/bin:/usr/sbin:/usr/local/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="~/.config/emacs/bin:$PATH"
 export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=x11
 export IVERILOG_DUMPER="lxt"
-
+export PROTON_ENABLE_WAYLAND=1
 
 export DRI_PRIME=1
 
-eval "$($HOME/.fzf/bin/fzf --zsh)"
+source <(fzf --zsh)
+export BAT_THEME="Catppuccin Mocha"
 
 # Starship prompt
 eval "$(~/.cargo/bin/starship init zsh)"
@@ -278,7 +280,7 @@ alias clc="clear"
 alias pamcan="pacman"
 alias sleep="sudo systemctl suspend"
 #alias pacman="paru"
-alias pip="pip3"
+alias pip="bin/python pip3"
 alias ova2qcow="sudo /bin/ova2qcow.sh"
 #alias less="bat"
 #alias more='bat'
@@ -294,14 +296,9 @@ export PATH="~/.local/bin:$PATH"
 export PATH="/usr/bin/VitalBinaries:$PATH"
 export PATH="~/Documents/scripts:$PATH"
 export PATH="/usr/local/ADS2023/bin:$PATH"
-<<<<<<< HEAD
 export PATH="$HOME/ti/ccs1260/ccs/tools/compiler:$PATH"
 # LSPs from Mason
 export PATH="$HOME/.local/share/data/mason/bin:$PATH"
-=======
-export PATH="~/ti/ccs1260/ccs/tools/compiler:$PATH"
->>>>>>> accff131a6f4f0a5d0459dca84887f5dc3b79bcf
-
 alias sshvlsi="ssh njfox4@lts-broker.sens.buffalo.edu"
 alias pip="python3 -m pip"
 alias venv="python3 -m venv"
@@ -340,7 +337,10 @@ alias nvtmux="nvim $HOME/.tmux.conf"
 
 alias icat="kitty icat"
 alias nvkitty="nvim ~/.config/kitty/kitty.conf"
-alias nvhypr="nvim ~/.config/hypr/hyprland.conf"
+alias nvhypr="cd ~/.config/hypr && nvim hyprland.conf && cd -"
+alias sfwp="hyprctl hyprpaper reload ,\"$HOME/Pictures/sinder_demon_sfw.jpg\""
+alias nsfwp="hyprctl hyprpaper reload ,\"$HOME/Pictures/sinder_demon.jpg\""
+
 
 # alias fpgal="openFPGALoader"
 
@@ -369,8 +369,6 @@ alias ......='cd ../../../../..'
 alias hw='hwinfo --short'                                   # Hardware Info
 alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed packages according to size in MB (expac must be installed)
 
-alias helpme='cht.sh --shell'
-alias tb='nc termbin.com 9999'
 # alias start-pintos="docker start pintos; docker exec -it pintos /usr/bin/fish"
 # alias pish="docker exec -it pintos /usr/bin/fish"
 alias nvkernel="sudo nvim /etc/default/grub"
@@ -420,7 +418,7 @@ if [ -d "/home/nfox/stl/prefix" ]; then export PATH="$PATH:/home/nfox/stl/prefix
 
 alias wayshell="waydroid shell bash"
 
-. "$HOME/.local/share/../bin/env"
+# . "$HOME/.local/share/../bin/env"
 # bun completions
 # [ -s "/home/sparkle/.bun/_bun" ] && source "/home/sparkle/.bun/_bun"
 #
