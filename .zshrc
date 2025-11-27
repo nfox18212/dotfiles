@@ -10,10 +10,12 @@ export XDG_SESSION_TYPE=x11
 export IVERILOG_DUMPER="lxt"
 export PROTON_ENABLE_WAYLAND=1
 
-export DRI_PRIME=1
+# export DRI_PRIME=1
 
 source <(fzf --zsh)
 export BAT_THEME="Catppuccin Mocha"
+
+export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
 
 # Starship prompt
 eval "$(~/.cargo/bin/starship init zsh)"
@@ -328,9 +330,10 @@ alias cl="clang"
 alias renv="source initenv.sh"
 
 alias sshaws="ssh -i $HOME/.ssh/aws-rsa.pem admin@ec2-54-210-198-149.compute-1.amazonaws.com"
+alias sshwg="ssh -i $HOME/.ssh/aws-rsa-2.pem admin@ec2-54-226-43-28.compute-1.amazonaws.com"
 
 #alias nvconfig="nvim $HOME/.config/nvim/init.vim"
-alias nvconfig="nvim $HOME/.config/nvim/init.lua"
+alias nvconfig="cd $HOME/.config/nvim && nvim init.lua && cd -"
 alias nvplugins="nvim $HOME/.config/nvim/lua/plugins/init.lua"
 alias nvsway="nvim $HOME/.config/sway/config"
 alias nvtmux="nvim $HOME/.tmux.conf"
@@ -349,7 +352,7 @@ alias nsfwp="hyprctl hyprpaper reload ,\"$HOME/Pictures/sinder_demon.jpg\""
 
 # ssh-stuff
 alias ssh-fix="~/Documents/CodingProjects/ShellScripts/ssh-fix.sh"
-
+alias ssh="kitten ssh"
 
 
 #aliases from root
@@ -431,3 +434,6 @@ alias wayshell="waydroid shell bash"
 # if [[ -z "$TMUX" ]]; then
 #   tmux
 # fi
+export PATH="$HOME/.diversion/bin:$PATH"
+
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh

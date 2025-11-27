@@ -24,9 +24,9 @@ disabled = false
 # Third param
 [directory]
 style = "purple"
-truncation_length = 3
+truncation_length = 2
 truncate_to_repo = true
-truncation_symbol = "repo: "
+truncation_symbol = "dir: "
 
 # Before all the version info (python, nodejs, php, etc.)
 [git_status]
